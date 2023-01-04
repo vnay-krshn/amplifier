@@ -1,0 +1,76 @@
+.detail-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.product-name {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 30px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #111111;
+  align-self: center;
+}
+.product-cost {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: right;
+  letter-spacing: 0.3px;
+  color: #111111;
+  align-self: center;
+}
+.product-weight {
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  color: #111111;
+  mix-blend-mode: multiply;
+}
+.product-description {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #111111;
+  margin-top: 10px;
+}
+.indicator-div {
+  margin: 40px 0 20px 0;
+}
+@media (max-width: 470px) {
+  .product-name {
+    font-size: 18px;
+  }
+  .detail-row {
+    margin-bottom: 8px;
+  }
+}
+
+.nutrition-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid rgb(190, 190, 190);
+  padding: 0.5em 0em;
+}
+
+.nutrition-list:nth-child(1) {
+  border-top: 1px solid rgb(190, 190, 190);
+}
+
+.nutrition-info-modal-header {
+  padding: 0 1.2em;
+}
+
+.nutrition-info-modal-container {
+  padding: 0 1.2em;
+  margin-top: 1em;
+}

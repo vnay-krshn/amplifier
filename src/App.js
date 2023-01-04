@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Child from "./components/Child";
+import Parent from "./components/Parent";
 
 function App() {
+  const [isParentVisible, setParentVisible] = useState(false);
+  const [isChildVisible, setChildVisible] = useState(false);
+
+  const onOpenParentPopup = () => {
+    setParentVisible(true);
+  };
+
+  const onCloseParentPopup = () => {
+    setParentVisible(false);
+  };
+
+  const showChild = () => {
+    setParentVisible(false);
+    setChildVisible(true);
+  };
+
+  const hideChild = () => {
+    setChildVisible(false);
+    setParentVisible(true);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={onOpenParentPopup}>Open parent</button>
+      {isParentVisible ? (
+        <Parent hideParent={onCloseParentPopup} onShowChildPopup={showChild} />
+      ) : null}
+      {isChildVisible ? <Child onCloseChild={hideChild} /> : null}
     </div>
   );
 }
